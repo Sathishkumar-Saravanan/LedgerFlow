@@ -1,7 +1,13 @@
 
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/v1";
+// ===============================
+// API BASE URL
+// ===============================
+
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "http://localhost:5000/api/v1";
 
 const api = axios.create({
   baseURL: API_URL,
@@ -52,7 +58,6 @@ export const getAccounts = () => {
 // ===============================
 
 // Verify recipient account
-// Uses the existing account balance endpoint
 export const verifyRecipient = (accountId) => {
   return api.get(
     `/accounts/${encodeURIComponent(accountId)}/balance`
@@ -60,8 +65,6 @@ export const verifyRecipient = (accountId) => {
 };
 
 // Create money transfer
-// Idempotency-Key prevents duplicate transfers on safe retries.
-// Reuse the SAME key and exact payload when retrying a request.
 export const transferMoney = (payload, idempotencyKey) => {
   if (!idempotencyKey) {
     throw new Error("Idempotency key is required");

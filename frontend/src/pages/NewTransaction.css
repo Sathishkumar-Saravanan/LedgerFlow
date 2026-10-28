@@ -1,0 +1,858 @@
+
+/* =========================================
+   NEW TRANSACTION PAGE
+========================================= */
+
+.new-transaction-page {
+  width: 100%;
+  min-width: 0;
+  padding: 28px;
+  color: #e2e8f0;
+  box-sizing: border-box;
+  background: #f8fafc;
+  min-height: 100%;
+}
+
+.new-transaction-page * {
+  box-sizing: border-box;
+}
+
+.new-transaction-page button,
+.new-transaction-page input,
+.new-transaction-page textarea {
+  font: inherit;
+}
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.new-transaction-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.nt-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  margin-bottom: 16px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.nt-back-btn:hover {
+  color: #0284c7;
+}
+
+.new-transaction-header h1 {
+  margin: 0 0 8px;
+  color: #0f172a;
+  font-size: clamp(25px, 3vw, 32px);
+  font-weight: 750;
+  letter-spacing: -0.8px;
+}
+
+.new-transaction-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   ACCOUNT SUMMARY
+========================================= */
+
+.nt-account-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+  border: 1px solid #dce7f2;
+  border-radius: 16px;
+  background: linear-gradient(110deg, #ffffff, #f0f9ff);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.025);
+}
+
+.nt-account-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.nt-account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  min-width: 0;
+}
+
+.nt-account-info > span,
+.nt-account-balance > span {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.nt-account-info strong {
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.nt-account-info small {
+  color: #94a3b8;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.nt-account-balance {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+  text-align: right;
+}
+
+.nt-account-balance strong {
+  color: #0f172a;
+  font-size: clamp(17px, 2vw, 24px);
+  font-weight: 750;
+  letter-spacing: -0.5px;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   MAIN GRID
+========================================= */
+
+.nt-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.85fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.nt-form-card,
+.nt-preview-card,
+.nt-info-card,
+.nt-created-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.025);
+  min-width: 0;
+}
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.nt-form-card {
+  padding: 28px;
+}
+
+.nt-form-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.nt-form-heading h2 {
+  margin: 0 0 7px;
+  color: #0f172a;
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: -0.3px;
+}
+
+.nt-form-heading p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.nt-heading-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+/* =========================================
+   FORM FIELDS
+========================================= */
+
+.nt-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 22px;
+  min-width: 0;
+}
+
+.nt-field label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.nt-field label span {
+  color: #ef4444;
+}
+
+.nt-field input,
+.nt-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #dbe4ef;
+  border-radius: 10px;
+  outline: none;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nt-field input::placeholder,
+.nt-field textarea::placeholder {
+  color: #a0aec0;
+}
+
+.nt-field input:focus,
+.nt-field textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+.nt-field textarea {
+  min-height: 110px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.nt-field-help {
+  color: #94a3b8;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   ACCOUNT INPUT + LOAD BUTTON
+========================================= */
+
+.nt-account-input-row {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.nt-account-input-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.nt-load-btn {
+  flex-shrink: 0;
+  padding: 0 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.nt-load-btn:hover:not(:disabled) {
+  border-color: #38bdf8;
+  background: #eff6ff;
+  color: #0369a1;
+}
+
+.nt-load-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   CREDIT / DEBIT SELECTOR
+========================================= */
+
+.nt-type-selector {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.nt-type-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.nt-type-btn:hover {
+  border-color: #94a3b8;
+}
+
+.nt-type-btn.active.nt-credit-btn {
+  border-color: #10b981;
+  background: #ecfdf5;
+  box-shadow: inset 0 0 0 1px #10b981;
+}
+
+.nt-type-btn.active.nt-debit-btn {
+  border-color: #f87171;
+  background: #fff1f2;
+  box-shadow: inset 0 0 0 1px #f87171;
+}
+
+.nt-type-symbol {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.nt-credit-btn.active .nt-type-symbol {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.nt-debit-btn.active .nt-type-symbol {
+  background: #ffe4e6;
+  color: #e11d48;
+}
+
+.nt-type-btn > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.nt-type-btn strong {
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.nt-type-btn small {
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* =========================================
+   AMOUNT FIELD
+========================================= */
+
+.nt-amount-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 14px;
+  border: 1px solid #dbe4ef;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #64748b;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nt-amount-input:focus-within {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+.nt-amount-input input {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding-left: 0;
+}
+
+.nt-amount-input input:focus {
+  border: none;
+  box-shadow: none;
+}
+
+/* =========================================
+   ALERTS
+========================================= */
+
+.nt-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 14px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.nt-alert svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.nt-alert-error {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.nt-alert-success {
+  border: 1px solid #a7f3d0;
+  background: #ecfdf5;
+  color: #047857;
+}
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.nt-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 51px;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 11px;
+  background: linear-gradient(110deg, #0284c7, #0f766e);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.nt-submit-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(2, 132, 199, 0.2);
+}
+
+.nt-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.nt-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.nt-loading-icon {
+  animation: nt-spin 1s linear infinite;
+}
+
+@keyframes nt-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   SIDE PANEL
+========================================= */
+
+.nt-side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* =========================================
+   TRANSACTION PREVIEW
+========================================= */
+
+.nt-preview-card {
+  padding: 22px;
+  overflow: hidden;
+}
+
+.nt-preview-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.nt-preview-heading svg {
+  color: #38bdf8;
+}
+
+.nt-preview-amount {
+  padding: 24px 0;
+  margin: 18px 0;
+  border-bottom: 1px solid #edf2f7;
+  text-align: center;
+}
+
+.nt-preview-amount span {
+  display: block;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  overflow-wrap: anywhere;
+}
+
+.nt-preview-credit {
+  color: #059669;
+}
+
+.nt-preview-debit {
+  color: #e11d48;
+}
+
+.nt-preview-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.nt-preview-type:last-child {
+  border-bottom: none;
+}
+
+.nt-preview-type > span {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.nt-preview-type strong {
+  max-width: 60%;
+  color: #334155;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   INFO CARD
+========================================= */
+
+.nt-info-card {
+  padding: 22px;
+}
+
+.nt-info-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.nt-info-title svg {
+  flex-shrink: 0;
+  color: #0d9488;
+}
+
+.nt-info-title h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.nt-info-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nt-info-card li {
+  position: relative;
+  padding-left: 20px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.nt-info-card li::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38bdf8;
+}
+
+/* =========================================
+   CREATED TRANSACTION CARD
+========================================= */
+
+.nt-created-card {
+  padding: 22px;
+  border-color: #a7f3d0;
+  background: #f0fdf4;
+}
+
+.nt-created-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 17px;
+  color: #059669;
+}
+
+.nt-created-heading h3 {
+  margin: 0;
+  color: #065f46;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.nt-created-card > p {
+  margin: 0 0 7px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.nt-created-id {
+  display: block;
+  margin-bottom: 18px;
+  color: #065f46;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.nt-view-transactions-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #a7f3d0;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #047857;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.nt-view-transactions-btn:hover {
+  background: #dcfce7;
+  border-color: #6ee7b7;
+}
+
+/* =========================================
+   ACCESSIBILITY / FOCUS
+========================================= */
+
+.new-transaction-page button:focus-visible {
+  outline: 3px solid rgba(14, 165, 233, 0.45);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+  .nt-content-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nt-side-panel {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .nt-created-card {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .new-transaction-page {
+    padding: 18px 14px;
+  }
+
+  .new-transaction-header {
+    margin-bottom: 20px;
+  }
+
+  .new-transaction-header h1 {
+    font-size: 26px;
+  }
+
+  .nt-account-card {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 17px;
+    gap: 12px;
+  }
+
+  .nt-account-info {
+    flex-basis: calc(100% - 65px);
+  }
+
+  .nt-account-balance {
+    width: 100%;
+    padding-top: 14px;
+    margin-top: 5px;
+    border-top: 1px solid #e2e8f0;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .nt-form-card {
+    padding: 18px;
+  }
+
+  .nt-form-heading {
+    align-items: flex-start;
+    gap: 10px;
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+  }
+
+  .nt-form-heading h2 {
+    font-size: 17px;
+  }
+
+  .nt-type-selector {
+    gap: 8px;
+  }
+
+  .nt-type-btn {
+    padding: 12px 10px;
+    gap: 9px;
+  }
+
+  .nt-type-symbol {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    font-size: 21px;
+  }
+
+  .nt-type-btn strong {
+    font-size: 12px;
+  }
+
+  .nt-type-btn small {
+    font-size: 10px;
+  }
+
+  .nt-account-input-row {
+    gap: 8px;
+  }
+
+  .nt-load-btn {
+    padding: 0 13px;
+  }
+
+  .nt-side-panel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nt-preview-card,
+  .nt-info-card,
+  .nt-created-card {
+    padding: 18px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .new-transaction-page {
+    padding: 14px 10px;
+  }
+
+  .nt-form-card {
+    padding: 14px;
+  }
+
+  .nt-type-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .nt-account-input-row {
+    flex-direction: column;
+  }
+
+  .nt-load-btn {
+    min-height: 42px;
+  }
+
+  .nt-account-info strong {
+    font-size: 12px;
+  }
+
+  .nt-preview-amount span {
+    font-size: 24px;
+  }
+}
